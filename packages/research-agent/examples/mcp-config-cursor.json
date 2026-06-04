@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "research-agent": {
+      "command": "node",
+      "args": ["./node_modules/@earendil-works/pi-research-agent/dist/mcp-cli.js"]
+    }
+  }
+}

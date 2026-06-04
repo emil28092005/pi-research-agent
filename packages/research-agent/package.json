@@ -1,0 +1,77 @@
+{
+	"name": "@earendil-works/pi-research-agent",
+	"version": "0.78.0",
+	"description": "Autonomous research agent with web search, source analysis, and report synthesis. MCP-compatible.",
+	"type": "module",
+	"bin": {
+		"pi-research": "dist/cli.js",
+		"pi-research-mcp": "dist/mcp-cli.js"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"clean": "shx rm -rf dist",
+		"build": "tsgo -p tsconfig.build.json && shx chmod +x dist/cli.js dist/mcp-cli.js",
+		"test": "vitest --run",
+		"prepublishOnly": "npm run clean && npm run build"
+	},
+	"dependencies": {
+		"@earendil-works/pi-agent-core": "^0.78.0",
+		"@earendil-works/pi-ai": "^0.78.0",
+		"@earendil-works/pi-tui": "^0.78.0",
+		"@modelcontextprotocol/sdk": "1.29.0",
+		"chalk": "5.6.2",
+		"typebox": "1.1.38",
+		"undici": "8.3.0",
+		"yaml": "2.9.0",
+		"zod": "3.25.67"
+	},
+	"devDependencies": {
+		"@types/node": "24.12.4",
+		"shx": "0.4.0",
+		"typescript": "5.9.3",
+		"vitest": "3.2.4"
+	},
+	"keywords": [
+		"research-agent",
+		"ai",
+		"llm",
+		"web-search",
+		"autonomous",
+		"agent",
+		"mcp",
+		"model-context-protocol",
+		"deep-research",
+		"report-generation",
+		"tavily"
+	],
+	"author": {
+		"name": "Pi Research Team",
+		"url": "https://github.com/earendil-works/pi"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/earendil-works/pi/tree/main/packages/research-agent#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/earendil-works/pi.git",
+		"directory": "packages/research-agent"
+	},
+	"bugs": {
+		"url": "https://github.com/earendil-works/pi/issues"
+	},
+	"engines": {
+		"node": ">=22.19.0"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "research-agent": {
+      "command": "node",
+      "args": ["./packages/research-agent/dist/mcp-cli.js"],
+      "env": {
+        "TAVILY_API_KEY": "***",
+        "OPENROUTER_API_KEY": "***",
+        "LLM_MODEL": "minimax/minimax-m3"
+      }
+    }
+  }
+}

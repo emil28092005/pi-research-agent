@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { createResearchMcpServer } from "./mcp-server.ts";
+import { loadEnvFile } from "./utils/env.ts";
+
+loadEnvFile();
+
+async function main() {
+	const server = createResearchMcpServer();
+	const transport = new StdioServerTransport();
+	await server.connect(transport);
+}
+
+main().catch((error) => {
+	console.error("Fatal error:", error);
+	process.exit(1);
+});
